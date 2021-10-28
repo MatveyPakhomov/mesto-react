@@ -26,7 +26,6 @@ function Main(props) {
             title: item.name,
             alt: item.name,
             like: item.likes,
-            card: props.onCardClick
           }))
         )
       })
@@ -52,7 +51,7 @@ function Main(props) {
       </section>
       <div className="cards">
         <ul className="cards__list">
-        {cards.map(({ id, card, ...props }) => <Card onCardClick={card} key={id} { ...props } />)}
+        {cards.map(({ id, ...parametr }) => <Card handleClick={props.onCardClick} key={id} { ...parametr } />)}
         </ul>
       </div>
     </main>
