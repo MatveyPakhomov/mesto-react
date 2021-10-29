@@ -13,7 +13,7 @@ function Card(props) {
         <button type="button" aria-label="Кнопка: удалить карточку" className="card__delete-button"></button>
         <div className="card__like-section">
           <button type="button" aria-label="Кнопка: мне нравится" className="card__like-button"></button>
-          <p className="card__like-counter">{props.like && props.like.length}</p>
+          <p className="card__like-counter">{props.like?.length}</p>
         </div>
       </div>
     </li>
