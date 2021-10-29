@@ -14,4 +14,4 @@
 3. Завершение рефакторинга
 4. Закрытие попапов по клику на оверлей и Esc
 
-### Проект на GitHub - https://matwick1.github.io/mesto
+### Проект на GitHub - https://matveypakhomov.github.io/mesto
