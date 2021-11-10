@@ -1,5 +1,5 @@
-.card__delete-button {
-  background: no-repeat url('../../../images/element-garbage-button.svg');
+.card__delete-button_hidden {
+  background: no-repeat url('../../../../images/element-delete-button.svg');
   width: 18px;
   height: 19.3px;
   border: none;
@@ -10,8 +10,7 @@
   position: absolute;
   top: 18px;
   right: 15px;
-}
-
-.card__delete-button:hover {
-  opacity: 0.6;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
 }
