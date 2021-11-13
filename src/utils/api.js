@@ -11,21 +11,21 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status} ${res.statusText}`);
   }
 
-  getProfileInfo() {
+  getUserInfo() {
     return fetch(this.url + '/users/me', {
       headers: this.headers,
     })
       .then(this._checkResponse)
   }
 
-  getInitialCards() {
+  getCardList() {
     return fetch(this.url + '/cards', {
       headers: this.headers
     })
       .then(this._checkResponse)
   }
 
-  editProfile(data) {
+  setUserInfo(data) {
     return fetch(this.url + '/users/me', {
       method: 'PATCH',
       headers: this.headers,
@@ -43,7 +43,7 @@ class Api {
       .then(this._checkResponse)
   }
 
-  updateAvatar(data) {
+  setUserAvatar(data) {
     return fetch(this.url + '/users/me/avatar', {
       method: 'PATCH',
       headers: this.headers,
