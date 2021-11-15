@@ -19,6 +19,11 @@ export function cardConfig(data) {
   }
 }
 
+// //формы для валидации
+// export const formEditProfile = document.querySelector('.popup__form_type_edit-profile');
+// export const formAddPlace = document.querySelector('.popup__form_type_add-place');
+// export const formEditAvatar = document.querySelector('.popup__form_type_edit-avatar');
+
 // export const container = document.querySelector('.elements__list');
 // export const itemTemplate = document.querySelector('.template-elements');
 
@@ -36,11 +41,6 @@ export function cardConfig(data) {
 // //popups input
 // export const nameInput = popupEdit.querySelector('.popup__input_value_name');
 // export const jobInput = popupEdit.querySelector('.popup__input_value_job');
-
-// //формы для валидации
-// export const formProfile = document.querySelector('.popup__form_type_edit');
-// export const formCard = document.querySelector('.popup__form_type_create');
-// export const formUpdateAvatar = document.querySelector('.popup__form_type_update-avatar');
 
 // //селекторы попапов
 // export const popupPreview = '.popup_type_view';
