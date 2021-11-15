@@ -13,10 +13,10 @@ function AddPlacePopup(props) {
     setLink(e.target.value)
   }
 
-  function handleFormReset() {
+  React.useEffect(() => {
     setName('');
     setLink('');
-  }
+  }, [props.isOpen])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,8 +25,6 @@ function AddPlacePopup(props) {
       name,
       link,
     });
-
-    handleFormReset();
   }
 
   return(

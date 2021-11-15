@@ -21,22 +21,13 @@ function App() {
   const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {
-    api.getUserInfo()
-      .then(res => {
-        setCurrentUser(res)
+    Promise.all([api.getUserInfo(), api.getCardList()])
+      .then(([userInfo, cardList]) => {
+        setCurrentUser(userInfo);
+        setCards(cardList.map((item) => cardConfig(item)));
       })
       .catch(err => console.log(err));
-  }, [])
-
-  React.useEffect(() => {
-    api.getCardList()
-      .then(res => {
-        setCards(
-          res.map((item) => (cardConfig(item)))
-        )
-      })
-      .catch(err => console.log(err));
-  }, [])
+    }, [])
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true)
@@ -64,21 +55,19 @@ function App() {
   function handleUpdateUser(data) {
     api.setUserInfo(data)
       .then(res => {
-        setCurrentUser(res)
+        setCurrentUser(res);
+        closeAllPopups();
       })
       .catch(err => console.log(err));
-
-    closeAllPopups();
   }
 
   function handleUpdateAvatar(data) {
     api.setUserAvatar(data)
       .then(res => {
-        setCurrentUser(res)
+        setCurrentUser(res);
+        closeAllPopups();
       })
       .catch(err => console.log(err));
-
-      closeAllPopups();
   }
 
   function handleCardLike(props) {
@@ -106,13 +95,10 @@ function App() {
   function handleAddPlaceSubmit(data) {
     api.addNewCard(data)
       .then(newCard => {
-        setCards(() => {
-          return [cardConfig(newCard), ...cards]
-        });
+        setCards(() => [cardConfig(newCard), ...cards]);
+        closeAllPopups();
       })
       .catch(err => console.log(err));
-
-      closeAllPopups();
   }
 
   return (
